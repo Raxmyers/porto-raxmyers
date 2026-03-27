@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+  --bg-color: #050b14;
+  --bg-color-light: #0d1b2a;
+  --primary-color: #00ffcc;
+  --primary-color-dim: rgba(0, 255, 204, 0.2);
+  --text-primary: #e0e6ed;
+  --text-secondary: #8892b0;
+  --font-mono: 'Fira Code', monospace;
+  --font-sans: 'Inter', sans-serif;
+  --glass-bg: rgba(13, 27, 42, 0.6);
+  --glass-border: rgba(0, 255, 204, 0.1);
+  --transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image: 
+    linear-gradient(var(--bg-color-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bg-color-light) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-position: center;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, transparent 0%, var(--bg-color) 80%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  text-shadow: 0 0 8px var(--primary-color-dim);
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, #00ffcc, #00b3ff);
+}
+
+.mono {
+  font-family: var(--font-mono);
+  color: var(--primary-color);
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  background: var(--primary-color-dim);
+  box-shadow: 0 0 15px var(--primary-color-dim);
+}
+
+/* cyber glitch effect for headers */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 blue;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(24px, 9999px, 86px, 0); }
+  20% { clip: rect(69px, 9999px, 14px, 0); }
+  40% { clip: rect(10px, 9999px, 91px, 0); }
+  60% { clip: rect(38px, 9999px, 5px, 0); }
+  80% { clip: rect(81px, 9999px, 39px, 0); }
+  100% { clip: rect(48px, 9999px, 26px, 0); }
+}
+
+@keyframes glitch-anim2 {
+  0% { clip: rect(93px, 9999px, 13px, 0); }
+  20% { clip: rect(16px, 9999px, 78px, 0); }
+  40% { clip: rect(54px, 9999px, 32px, 0); }
+  60% { clip: rect(87px, 9999px, 64px, 0); }
+  80% { clip: rect(21px, 9999px, 40px, 0); }
+  100% { clip: rect(76px, 9999px, 92px, 0); }
+}
+
+/* Sections */
+section {
+  min-height: 100vh;
+  padding: 100px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.section-title::before {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  background: var(--glass-border);
+  margin-right: 20px;
+}
+
+.section-title::after {
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  background: var(--glass-border);
+  margin-left: 20px;
+}
+
+ul {
+  list-style: none;
+}
