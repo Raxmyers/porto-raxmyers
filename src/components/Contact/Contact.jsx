@@ -22,7 +22,7 @@ const Contact = () => {
           my inbox is always open.
         </p>
 
-        <a href="mailto:hello@example.com" className="btn contact-btn">
+        <a href="mailto:muhammadrio2806@gmail.com" className="btn contact-btn">
           <FiMail className="btn-icon" /> Establish Secure Connection
         </a>
       </motion.div>
