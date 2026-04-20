@@ -80,46 +80,17 @@
   left: 20px;
 }
 
-.terminal-portrait {
-  background: var(--bg-color-light);
-  min-height: 250px;
-  border-radius: 5px;
+.profile-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  filter: grayscale(30%) contrast(1.1);
+  transition: var(--transition);
 }
 
-.terminal-header {
-  background: #1e1e1e;
-  padding: 10px;
-  display: flex;
-  gap: 8px;
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.dot.red { background: #ff5f56; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #27c93f; }
-
-.terminal-body {
-  padding: 20px;
-  color: var(--primary-color);
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.prompt {
-  color: #8892b0;
-}
-
-.cursor {
-  animation: blink 1s step-end infinite;
-}
-
-@keyframes blink {
-  50% { opacity: 0; }
+.image-wrapper:hover .profile-photo {
+  filter: grayscale(0%) contrast(1);
 }
 
 @media (max-width: 800px) {

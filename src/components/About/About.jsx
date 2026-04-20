@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiChevronRight } from 'react-icons/fi';
+import profilePhoto from '../../assets/profile-photo.png';
 import './About.css';
 
 const About = () => {
@@ -54,20 +55,7 @@ const About = () => {
         >
           <div className="image-container">
             <div className="image-wrapper glass">
-              <div className="terminal-portrait">
-                <div className="terminal-header">
-                  <span className="dot red"></span>
-                  <span className="dot yellow"></span>
-                  <span className="dot green"></span>
-                </div>
-                <div className="terminal-body mono">
-                  <span className="prompt">root@rax:~$</span> whoami <br />
-                  rax <br />
-                  <span className="prompt">root@rax:~$</span> cat status.txt <br />
-                  Actively defending the network. <br />
-                  <span className="cursor">_</span>
-                </div>
-              </div>
+              <img src={profilePhoto} alt="Rax Profile" className="profile-photo" />
             </div>
             <div className="image-outline"></div>
           </div>
