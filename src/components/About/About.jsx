@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiChevronRight } from 'react-icons/fi';
-import profilePhoto from '../../assets/profile-photo.png';
+import profilePhoto from '../../assets/mephoto.svg';
 import './About.css';
 
 const About = () => {
