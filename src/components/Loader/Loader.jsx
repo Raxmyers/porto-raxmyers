@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../../assets/logo.svg';
 import './Loader.css';
@@ -81,11 +81,24 @@ const Loader = () => {
               Cyber Security Engineer
             </motion.p>
 
+            <motion.p
+              className="loader-welcome"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ 
+                delay: 0.8, 
+                duration: 0.8,
+                ease: [0.22, 1, 0.36, 1]
+              }}
+            >
+              Welcome To My Website
+            </motion.p>
+
             <motion.div 
               className="progress-container"
               initial={{ opacity: 0, scaleX: 0.8 }}
               animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
+              transition={{ delay: 1, duration: 0.6 }}
             >
               <motion.div
                 className="progress-bar"
@@ -98,7 +111,7 @@ const Loader = () => {
               className="progress-text mono"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 0.5 }}
+              transition={{ delay: 1.2, duration: 0.5 }}
             >
               {Math.floor(progress)}%
             </motion.p>
