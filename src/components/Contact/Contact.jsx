@@ -13,7 +13,7 @@ const Contact = () => {
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <p className="mono text-gradient contact-pre">03. What's Next?</p>
+        <p className="mono text-gradient contact-pre">04. What's Next?</p>
         <h2 className="title glitch" data-text="Get In Touch">Get In Touch</h2>
 
         <p className="contact-desc">

@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Loader from './components/Loader/Loader';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import Projects from './components/Projects/Projects';
+import Certifications from './components/Certifications/Certifications';
 import Contact from './components/Contact/Contact';
 import './App.css';
 
@@ -29,6 +30,7 @@ function App() {
             <Hero />
             <About />
             <Projects />
+            <Certifications />
             <Contact />
           </main>
         </>
